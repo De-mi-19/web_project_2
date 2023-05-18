@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawai Canteen.com</title>'
+    <!-- <link rel="stylesheet" href="web.css"> -->
+    <style>*{
+        
+        margin: 0;
+        padding: 0;
+        
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    /* css  */
+    :root{
+        --nav-height:59px;
+    }
+    
+    #nav{
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top:0px;
+    }
+    #nav::before{
+        content: "";
+        background-color: black;
+        position: absolute;
+        top:1px;
+        left:2px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+    }
+    #logo{
+        margin:5px 34px;
+    }
+    #logo img{
+        height: 59px;
+        margin:3px 6px;
+        border-radius: 32px;
+    }
+    #nav ul{
+        display: flex;
+        font-family:"Baloo Bhai",cursive;
+    }
+    #nav ul li{
+        list-style-type: none;
+        font-size: 1.3rem;
+    }
+    #nav ul li a{
+        padding: 1px 34px;
+        color :white;
+        display: block;
+        text-decoration: none;
+        border-radius:20px;
+    }
+    #nav ul li a:hover{
+        color:black;
+        background-color:antiquewhite;
+    }    
+    /* Home section */
+    #home{
+        display: flex;
+        flex-direction: column;
+        padding: 4px 200px;
+        height: 469px;
+        justify-content: center;
+        align-items: center;
+        /* background: url('bg1.jpg') no-repeat center; */
+    }
+    #home::before{
+        content: " ";
+        position: absolute;
+        background: url('bg1.jpg') no-repeat center center/cover;
+        height: 642px;
+        top:0px;
+        left:0px;
+        width: 100%;
+        z-index: -1;
+        opacity:0.89;
+    }
+    #home h1{
+        color: white;
+        text-align: center;
+        font-family: 'Bree Serif',serif;
+        font-size: 2.5rem;
+        padding-bottom: 8px;
+    }
+    #home p{
+        color: rgb(253, 253, 253);
+        text-align: center;
+        font-size: 1.3rem;
+        font-family: 'Bree Serif',serif;
+    }
+    /* .btn{
+        margin-top:56px;
+        padding: 1px 4px;
+        background-color: rgba(0, 0,0, 0.3);
+        border-color: whitesmoke;
+        border-radius: 8px;
+        color: white;
+        font-size: larger
+    } */
+
+    /* Services section */
+    #service{
+        margin:34px;
+        display: flex;
+    }
+    #service .box{
+        border: 2px solid brown;
+        padding: 34px;
+        margin: 2px 55px;
+        border-radius: 28px;
+        background: #f2f2f2;
+        margin-bottom: 20px;
+
+    }
+    #service .box img{
+        height: 160px;
+        margin:auto;
+        display: block;
+    }
+
+    #service.box p{
+        font-family: 'Bree Serif',serif;
+        text-align: center;
+    }
+
+    h1{
+        margin: 50px;
+        
+    }
+
+    /* Client section */
+    #client{
+        position: relative;
+    }
+    #client::before{
+        content:" ";
+        position:absolute;
+        background: url('bg.jpg');
+        width:100%;
+        height: 100%;
+        z-index: -1;
+        opacity:0.3;
+
+    }
+
+    #clients{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .items{
+        padding: 34px;
+    }
+    #client img{
+        height: 134px;
+    }
+
+    /* contact section */
+
+    #contact{
+        position:relative;
+    }
+    #contact::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.7;
+        background: url('contact.jpg') no-repeat center center/cover;
+    }
+    #contact-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 34px;
+    }
+    #contact-box input,#contact-box textarea{
+        font-size: 1.3rem;
+        font-family: 'Bree Serif',serif;
+    }
+    #contact-box form{
+        width: 40%;
+    }
+    #contact-box label{
+        font-size: 1.3rem;
+        font-family: 'Bree Serif',serif;
+    }
+    footer{
+        background: black;
+        color: white;
+        padding: 12px;
+    }
+    
+    /*  */
+    .h-primary{
+        font-family: 'Bree Serif',serif;
+        font-size: 3.8rem;
+        padding:12px;
+    }
+    .secondary{
+        font-family: 'Bree Serif',serif;
+        font-size: 2.3rem;
+        padding: 12px;
+    }
+    .btn{
+        padding: 6px 20px;
+        border: 2px solid white;
+       
+        background-color: rgba(0, 0,0, 0.3);
+        color: white;
+        margin: 17px;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        cursor:pointer;
+    }
+    .center{text-align: center;
+    }
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- navigation bar -->
+    <nav id="nav">
+        <div id="logo"><img src="logo.jpg" alt=""></div>
+        <ul>
+            <li class="list"><a href="#home">Home</a></li>
+            <li class="list"><a href="#feat">Features</a></li>
+            <li class="list"><a href="#service">Service</a></li>
+            <li class="list"><a href="#contact">Contact us</a></li>
+        </ul>
+    </nav>
+
+
+    <section id="home">
+        <h1 class="h-primary">Welcome To Hawai Canteen</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, quae odio. Iure eligendi quia suscipit corrupti maiores eaque sit </p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium nesciunt consectetur expedita facilis voluptatem odio maxime </p>
+        
+        <button class="btn" name="Order">Order Now</button>
+    </section>
+
+    <section class="service"><h1 class="h-primary center"> Our Services</h1>
+        <div id="service">
+            <div class="box"><img src="img/1.png" alt=" "><h2 class="secondary">Food Catering</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, labore omnis vel esse dolores eaque illo id. Incidunt a voluptatibus consequatur sed, inventore impedit ex dicta. Veniam itaque corporis deleniti?</p></div>
+            <div class="box"><img src="img/2.png" alt=""><h2 class="secondary">Bulk Odrering</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, labore omnis vel esse dolores eaque illo id. Incidunt a voluptatibus consequatur sed, inventore impedit ex dicta. Veniam itaque corporis deleniti?</p></div>
+            <div class="box"><img src="img/3.png" alt=""><h2 class="secondary">Food Ordering</h2><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, labore omnis vel esse dolores eaque illo id. Incidunt a voluptatibus consequatur sed, inventore impedit ex dicta. Veniam itaque corporis deleniti?</p></div>
+    
+        </div></section>
+
+    <section id="client">
+        <h1 class="h-primary center">Our Clients</h1>
+        <div id="clients">
+            <div class="items"><img src="img/logo1.png" alt=""></div>
+            <div class="items"><img src="img/logo2.png" alt=""></div>
+            <div class="items"><img src="img/logo3.png" alt=""></div>
+            <div class="items"><img src="img/logo4.png" alt=""></div>
+            
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1 class="h-primary center">Contact Us</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="name" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number: </label>
+                    <input type="phone" name="name" id="phone" placeholder="Enter your phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message: </label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="center">
+            Copyright &copy; www.HawaiCanteen.com. All rights reserved!
+        </div>
+    </footer>
+
+</body>
+</html>

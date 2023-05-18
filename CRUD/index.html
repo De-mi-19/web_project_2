@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>CRUD operations</h1>
+        <div class="iptCont">
+            <input type="text" id=name placeholder="Enter your name">
+            <input type="text" id="email" placeholder="Enter your Email">
+            <button id="add">Add</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+
+
+        <div id="update">
+            <input type="text" id="upName" placeholder="Enter name">
+            <input type="text" id="upEmail" placeholder="Enter Email">
+            <button id="updt">Update</button>
+            <button id="cncl">Cancel</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

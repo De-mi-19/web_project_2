@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .wrapper{
+            display: inline-flex;
+        }
+        .wrapper .st-txt{
+            font-size: 40px;
+            font-weight: 400;
+        }
+        .wrapper .dy-txt{
+            margin-left:15px;
+            height: 90px;
+            overflow: hidden;
+            line-height: 82px;
+
+
+        }
+        .dy-txt li{
+            position: relative;
+            list-style: none;
+            font-size: 40px;
+            font-weight: 500;
+            top:0;
+            animation:  slide 6s steps(4) infinite;
+        }
+        @keyframes slide {
+            100%{
+               top: -360px;
+            }
+        }
+
+        .dy-txt li span{
+            position:relative;
+        }
+        .dy-txt li span::after{
+            content:"";
+            left: 0;
+            background:white;
+            position: absolute;
+            height: 73px;
+            width:100%;
+            border-left:2px solid  black;
+            animation:  type 5s steps(10) infinite;
+        }
+        @keyframes type {
+            100%{
+                left:100%;
+                margin:0 -35px 0 35px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="st-txt">I'am a</div>
+        <ul class="dy-txt">
+            <li><span>Designer</span></li>
+            <li><span>Developer</span></li>
+            <li><span>Dancer</span></li>
+            <li><span>DrameBazz</span></li>
+        </ul>
+        
+    </div>
+</body>
+</html>

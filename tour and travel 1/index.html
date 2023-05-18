@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Scrammble game</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 15vh;
+      background-color: rgb(245, 42, 42);
+    }
+
+    h1 {
+      color: whitesmoke;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 15px;
+      text-shadow: 0 1px 0 #efefef, 0 2px 0 #efefef, 0 3px 0 #efefef, 0 1px 0 #efefef, 0 30px 5px rgba(0, 0, 0, 0.1);
+
+    }
+
+    section {
+      height: 85vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(253, 73, 73);
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: rgb(245, 42, 42);
+      padding: 7rem 5rem;
+      border-radius: 20px;
+    }
+
+    h3 {
+      color: white;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px 0;
+      text-align: center;
+      border-radius: 25px;
+      outline: none;
+      border: none;
+      background-color: #dff9fb;
+      color: black;
+      margin: 2rem 0;
+      font-size: 1.1rem;
+    }
+
+    button {
+font-size: 1rem;
+cursor: pointer;
+outline: none;
+border: #2f3542;
+margin-top: 10px;
+color: #eb4d4b;
+}
+button.btn {
+font-weight: 600;
+padding: 1rem 2rem;
+background:white;
+text-transform: uppercase;
+transition-property: all;
+transition-duration: 0.5s;
+transition-timing-function: cubic-bezier(0.65, -0.25, 0.25, 1.95);
+}
+button.btn:hover, button.btn:focus, button.btn:active {
+letter-spacing: 0.125rem;
+word-spacing: 2rem; }
+.hidden{
+  display: none;
+}
+ 
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>The Scramble game</h1>
+  </header>
+
+  <section>
+    <div id="container">
+      <h3 id="msg"></h3>
+      <input type="text" class="hidden">
+      <button class="btn">Click here to start</button>
+    </div>
+  </section>
+
+  <!--javaScript -->
+  <script>
+    const msg=document.querySelector('#msg');
+    const guess=document.querySelector('input');
+    const btn=document.querySelector('.btn');
+    let play=false;
+    let rwords="",nwords="";
+    let words=['python', 'javascript', 'c++', 'php', 'reactjs', 'angular', 'swift', 'android', 'sql'];
+
+    const createWords=()=>{
+      // console.log(words);
+      let randm=Math.floor(Math.random()*words.length);
+      // console.log(words[randm]);
+      let newtemp =words[randm];
+      return newtemp;
+    }
+
+    const scrambleWrd=(arr)=>{
+      for(let i=arr.length-1;i>=0;i--){
+        let tmp=arr[i];
+        // console.log(tmp);
+        let x=Math.floor(Math.random()*(i+1));
+        // console.log(i);
+        // console.log(x);
+
+        arr[i]=arr[x];
+        arr[x]=tmp; 
+        
+
+
+
+      }
+    return arr.join("");
+    }
+
+    btn.addEventListener('click',function(){
+      if(!play){
+        play=true;
+        btn.innerHTML='Guess';
+        guess.classList.toggle('hidden');
+        nwords=createWords();
+        rwords=scrambleWrd(nwords.split(""));
+        // console.log(rwords);
+        msg.innerHTML=`Guess This=>${rwords}`;
+      }
+      else{
+        let tpwrd=guess.value;
+        if(tpwrd===nwords){
+          msg.innerHTML=`You guessed it Correct &#129321\n `
+          play=false;
+          btn.innerHTML="Start Again";
+          guess.value=""
+          guess.classList.toggle('hidden');
+  
+          
+        }
+        else{
+          msg.innerHTML=`Try Again  &#128556\n Answer:${nwords}`;
+          guess.value=""
+          btn.innerHTML="Try Again";
+          guess.classList.toggle('hidden')
+         
+        }
+      }
+
+
+
+    });
+  </script>
+</body>
+
+</html>
